@@ -16,25 +16,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-    -
-      name: git init
-      run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        npm i -D all-contributors-cli
-    -
-      name: add-contributors
-      uses: sinchang/all-contributors-action@master
-      env:
-        GITHUB_REPOSITORY: ${{ GITHUB.GITHUB_REPOSITORY }}
-    -
-      name: create-pull-request
-      uses: gr2m/create-or-update-pull-request-action@v1.x
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+    - uses: BobAnkh/add-contributors@master
       with:
-        branch: ${{ env.branch }}
-        body: ${{ env.body }}
-        title: ${{ env.title }}
-        commit-message: ${{ env.commitMessage }}
-        author: github-actions[bot] <troy@zygd.site>
+        CONTRIBUTOR: '### Contributors'
+        COLUMN_PER_ROW: '6'
+        ACCESS_TOKEN: ${{secrets.TOKEN_GITHUB}}
+        IMG_WIDTH: '100'
+        FONT_SIZE: '14'
+        PATH: '/docs/README.md'
+        COMMIT_MESSAGE: 'docs(README): update contributors'
+        AVATAR_SHAPE: 'round'
