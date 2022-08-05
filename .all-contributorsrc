@@ -11,24 +11,6 @@
   "commitConvention": "eslint",
   "contributors": [
     {
-      "login": "jfmengels",
-      "name": "Jeroen Engels",
-      "avatar_url": "https://avatars.githubusercontent.com/u/3869412?v=4",
-      "profile": "https://jfmengels.net/",
-      "contributions": [
-        "doc"
-      ]
-    },
-    {
-      "login": "Ran-Xing",
-      "name": "星冉",
-      "avatar_url": "https://avatars.githubusercontent.com/u/73819467?v=4",
-      "profile": "https://github.com/Ran-Xing",
-      "contributions": [
-        "doc"
-      ]
-    },
-    {
       "login": "k0xx11",
       "name": "k0xx",
       "avatar_url": "https://avatars.githubusercontent.com/u/54017627?v=4",
