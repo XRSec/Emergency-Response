@@ -9,25 +9,6 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "eslint",
-  "contributors": [
-    {
-      "login": "crazy1948",
-      "name": "crazy1948",
-      "avatar_url": "https://avatars.githubusercontent.com/u/74634605?v=4",
-      "profile": "https://github.com/crazy1948",
-      "contributions": [
-        "doc"
-      ]
-    },
-    {
-      "login": "yifaang",
-      "name": "一方通行",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88997549?v=4",
-      "profile": "https://github.com/yifaang",
-      "contributions": [
-        "doc"
-      ]
-    }
-  ],
+  "contributors": [],
   "contributorsPerLine": 7
 }
