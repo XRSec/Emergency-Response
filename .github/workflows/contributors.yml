@@ -21,3 +21,4 @@ jobs:
         body: ${{ env.body }}
         title: ${{ env.title }}
         commit-message: ${{ env.commitMessage }}
+        author: github-actions[bot] <troy@zygd.site>
