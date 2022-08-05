@@ -18,7 +18,7 @@ jobs:
         node-version: 16
     - uses: BobAnkh/add-contributors@master
       with:
-        CONTRIBUTOR: '### Contributors'
+        CONTRIBUTOR: '## 贡献者'
         COLUMN_PER_ROW: '6'
         ACCESS_TOKEN: ${{secrets.TOKEN_GITHUB}}
         IMG_WIDTH: '100'
