@@ -11,17 +11,15 @@
   "commitConvention": "eslint",
   "contributors": [
     {
-      "login": "yifaang",
-      "name": "一方通行",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88997549?v=4",
-      "profile": "https://github.com/yifaang",
+      "login": "Ran-Xing",
+      "name": "星冉",
+      "avatar_url": "https://avatars.githubusercontent.com/u/73819467?v=4",
+      "profile": "https://github.com/Ran-Xing",
       "contributions": [
-        "infra",
-        "test",
-        "code"
+        "doc"
       ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": true
+  "skipCi": "true"
 }
