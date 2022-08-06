@@ -17,6 +17,11 @@ jobs:
       with:
         node-version: 16
     -
+      name: git init
+      run: |
+        git config --global user.email "troy@zygd.site"
+        git config --global user.name "github-actions[bot]"
+    -
       uses: sinchang/all-contributors-action@master
       env:
         GITHUB_REPOSITORY: ${{ GITHUB.REPOSITORY }}
