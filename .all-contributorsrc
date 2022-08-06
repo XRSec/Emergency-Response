@@ -49,6 +49,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "binganao",
+      "name": "Bingan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70050083?v=4",
+      "profile": "https://bingbingzi.cn",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
