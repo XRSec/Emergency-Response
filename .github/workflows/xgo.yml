@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: XRSec/Emergency-Response-Source
+          token: ${{ secrets.TOKEN_GITHUB }}
       -
         name: Get Data
         id: time
