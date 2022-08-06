@@ -16,15 +16,14 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-    -
-      uses: sinchang/all-contributors-action@master
-      env:
-        GITHUB_REPOSITORY: ${{ github.GITHUB_REPOSITORY }}
-    - uses: gr2m/create-or-update-pull-request-action@v1.x
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+    - uses: ActionwareIO/all-contributors-action@action
       with:
-        branch: ${{ env.branch }}
-        body: ${{ env.body }}
-        title: ${{ env.title }}
-        commit-message: ${{ env.commitMessage }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+    # - uses: gr2m/create-or-update-pull-request-action@v1.x
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+    #   with:
+    #     branch: ${{ env.branch }}
+    #     body: ${{ env.body }}
+    #     title: ${{ env.title }}
+    #     commit-message: ${{ env.commitMessage }}
