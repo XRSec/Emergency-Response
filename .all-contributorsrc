@@ -27,8 +27,19 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "crazy1948",
+      "name": "crazy1948",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74634605?v=4",
+      "profile": "https://github.com/crazy1948",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": "true"
+  "skipCi": true
 }
