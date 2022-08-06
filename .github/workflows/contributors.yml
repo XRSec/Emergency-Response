@@ -19,7 +19,7 @@ jobs:
     -
       uses: sinchang/all-contributors-action@master
       env:
-        GITHUB_REPOSITORY: ${{ GITHUB.GITHUB_REPOSITORY }}
+        GITHUB_REPOSITORY: ${{ GITHUB_REPOSITORY }}
     -
       uses: gr2m/create-or-update-pull-request-action@v1.x
       env:
