@@ -1,0 +1,14 @@
+{
+  "projectName": "Emergency-Response",
+  "projectOwner": "Ran-Xing",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "docs/README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [],
+  "contributorsPerLine": 7
+}

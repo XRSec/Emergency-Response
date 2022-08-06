@@ -16,13 +16,15 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-    - uses: BobAnkh/add-contributors@master
+    -
+      uses: sinchang/all-contributors-action@master
+      env:
+        GITHUB_REPOSITORY: ${{ github.GITHUB_REPOSITORY }}
+    - uses: gr2m/create-or-update-pull-request-action@v1.x
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
       with:
-        CONTRIBUTOR: '## 贡献者'
-        COLUMN_PER_ROW: '6'
-        ACCESS_TOKEN: ${{secrets.TOKEN_GITHUB}}
-        IMG_WIDTH: '100'
-        FONT_SIZE: '14'
-        PATH: '/docs/README.md'
-        COMMIT_MESSAGE: 'docs(README): update contributors'
-        AVATAR_SHAPE: 'round'
+        branch: ${{ env.branch }}
+        body: ${{ env.body }}
+        title: ${{ env.title }}
+        commit-message: ${{ env.commitMessage }}
