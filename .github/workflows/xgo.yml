@@ -36,13 +36,13 @@ jobs:
           echo "::set-output name=dir::$(git rev-parse HEAD)"
       -
         name: Build with xgo
-        uses: crazy-max/ghaction-xgo@v1
+        uses: crazy-max/ghaction-xgo@v2
         with:
           xgo_version: latest
-          go_version: ${{ matrix.go_version }}
+          go_version: 1.18
           dest: bin
           prefix: er
-          targets: linux/amd64, linux/arm64, darwin/amd64, darwin/arm64, windows/amd64, windows/arm64
+          # targets: linux/amd64, linux/arm64, darwin/amd64, darwin/arm64, windows/amd64, windows/arm64
           v: false
           x: true
           race: false
