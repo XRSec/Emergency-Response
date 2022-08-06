@@ -25,6 +25,7 @@ jobs:
       uses: sinchang/all-contributors-action@master
       env:
         GITHUB_REPOSITORY: ${{ GITHUB.REPOSITORY }}
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     -
       uses: gr2m/create-or-update-pull-request-action@v1.x
       env:
