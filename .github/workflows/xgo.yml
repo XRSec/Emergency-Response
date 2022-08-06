@@ -9,8 +9,8 @@ on:
         default: "0.0.1"
       tagName:
         description: 'Set tag name'
-        required: false
-        type: string
+        required: true
+        default: "0.0.1"
   # watch:
   #   types: [started]
 
@@ -62,7 +62,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: "bin/**"
-          body_path: README.md
+          body_path: docs/update.md
           name: ${{ github.event.inputs.releaseName }}
           tag_name: ${{ github.event.inputs.tagName }}
           draft: false
