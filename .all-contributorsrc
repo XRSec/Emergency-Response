@@ -38,6 +38,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "k0xx",
+      "name": "KOXX",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16174774?v=4",
+      "profile": "https://github.com/K0XX",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
