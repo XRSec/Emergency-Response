@@ -29,4 +29,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 本项目基于[gopsutil](https://github.com/shirou/gopsutil) 库进行开发，主要采集机器信息，日志文件，针对不同系统获取不同命令，Windows自动释放 火绒、ydark 、事件工具等 工具有这几个就够了，其他的复制出来上传分析平台，最好使用 golang 全自动化，项目佛系更新，申请加入源码仓库  [issues](https://github.com/XRSec/Emergency-Response/issues/7)
 
-![wechat](/docs/IMG_3780.jpg)
+![wechat](/docs/DE543212-D038-4706-A5B9-5EDB105EFC01.jpeg)
