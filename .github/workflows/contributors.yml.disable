@@ -19,7 +19,7 @@ jobs:
     -
       name: git init
       run: |
-        git config --global user.email "troy@zygd.site"
+        git config --global user.email "Jalapeno1868@outlook.com"
         git config --global user.name "github-actions[bot]"
     -
       uses: sinchang/all-contributors-action@master
