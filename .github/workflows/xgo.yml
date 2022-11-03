@@ -28,12 +28,11 @@ jobs:
       -
         name: Get Data
         id: time
-        run: echo "::set-output name=dir::$(date +'%Y-%m-%d/%H:%M:%S')"
+        run: echo "dir=$(date +'%Y-%m-%d/%H:%M:%S')" >> $GITHUB_OUTPUT
       -
         name: Get commitId
         id: commitId
-        run:
-          echo "::set-output name=dir::$(git rev-parse HEAD)"
+        run: echo "dir=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       -
         name: Build with xgo
         uses: crazy-max/ghaction-xgo@v2
