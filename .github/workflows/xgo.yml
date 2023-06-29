@@ -21,7 +21,7 @@ jobs:
     steps:
       -
         name: Private Actions Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
         with:
           repository: XRSec/Emergency-Response-Source
           token: ${{ secrets.TOKEN_GITHUB }}
@@ -35,7 +35,7 @@ jobs:
         run: echo "dir=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       -
         name: Build with xgo
-        uses: crazy-max/ghaction-xgo@v2
+        uses: crazy-max/ghaction-xgo@v3.2.0
         with:
           xgo_version: latest
           go_version: 1.18
@@ -49,7 +49,7 @@ jobs:
           buildmode: default
       -
         name: Delete old Releases
-        uses: dev-drprasad/delete-older-releases@v0.2.0
+        uses: dev-drprasad/delete-older-releases@v0.3.4
         with:
           repo: ${{ github.repository }}
           keep_latest: 3
@@ -58,7 +58,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
       -
         name: Make release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2.3.2
         with:
           files: "bin/**"
           body_path: docs/update.md
@@ -68,43 +68,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
       -
-        name: Get Data 
-        id: getDingData
-        run: |
-          set -ex
-          # 输出仓库名
-          REPOSITORY="${{GITHUB.REPOSITORY}}"
-          echo "REPOSITORY=${REPOSITORY#*/}" >> $GITHUB_OUTPUT
-
-          # 获取用户仓库信息
-          # RESPONSE="$(curl -sLm 10 https://api.github.com/repos/${{ GITHUB.REPOSITORY }})"
-          # 建议填写自己的 TOKEN
-          RESPONSE="$(curl -sLm 10 https://api.github.com/repos/${{ GITHUB.REPOSITORY }} -H "Authorization: token ${{ SECRETS.TOKEN_GITHUB }}")"
-          
-          # 获取 用户仓库 设置的 描述，如果为空，可能是没有使用 TOKEN
-          DESCRIPTION="$(jq -r .description <(echo ${RESPONSE}))"
-          echo "DESCRIPTION=${DESCRIPTION}" >> $GITHUB_OUTPUT
-
-          # 获取 用户仓库 设置的 URL, 如果没有就输出 Github 地址
-          URL="$(jq -r .homepage <(echo ${RESPONSE}))"
-          if [[ "${URL}" == "null" || "${URL}" == "" ]]; then
-            echo "URL=${{ GITHUB.SERVER_URL }}/${{ GITHUB.REPOSITORY }}" >> $GITHUB_OUTPUT
-          else
-            echo "URL=${URL}" >> $GITHUB_OUTPUT
-          fi
-      - 
-        name: Send dingding notify
-        uses: zcong1993/actions-ding@master
+        name: Send notification to Feishu
+        uses: XRSec/feishu-bot-webhook-action@v1
         with:
-          dingToken: ${{ SECRETS.DING_TOKEN }}
-          secret: ${{ SECRETS.DING_SECRET }}
-          body: |
-            {
-              "msgtype": "link",
-              "link": {
-                  "text": "${{ steps.getDingData.outputs.DESCRIPTION }}",
-                  "title":  "${{ steps.getDingData.outputs.REPOSITORY }} WorkFlow ${{ GITHUB.JOB }} Success!",
-                  "picUrl": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-                  "messageUrl": "${{ steps.getDingData.outputs.URL }}"
-              }
-            }
+          FEISHU_BOT_WEBHOOK: ${{ secrets.FEISHU_BOT_WEBHOOK }}
+          FEISHU_BOT_SIGNKEY: ${{ secrets.FEISHU_BOT_SIGNKEY }}
